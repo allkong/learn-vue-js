@@ -1,0 +1,32 @@
+<!-- 
+    뷰 인스턴스: https://joshua1988.github.io/vue-camp/vue/instance.html
+    
+    뷰 메소드: 특정 기능 별로 묶을 수 있는 자바스크립트 함수
+    https://joshua1988.github.io/vue-camp/syntax/methods.html
+ -->
+<div id="app">
+    <p>{{ count }}</p>
+    <!-- 
+        뷰 디렉티브: v- 접두사가 가지는 속성
+        (v-on:click): 엘리멘트에 이벤트 리스너 연결
+        https://ko.vuejs.org/api/built-in-directives
+     -->
+    <button v-on:click="addCount">+</button>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+    Vue.createApp({
+        // data: function()은 data()로 축약 가능
+        data: function() {
+            return {
+                count: 0
+            }
+        },
+        methods: {
+            addCount() {
+                this.count++;
+            }
+        }
+    }).mount('#app');
+</script>

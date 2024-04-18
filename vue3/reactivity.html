@@ -1,0 +1,37 @@
+<!-- 
+    reactivity: 선언적 방식으로 변화에 적응할 수 있는 프로그래밍 패러다임
+    https://ko.vuejs.org/guide/extras/reactivity-in-depth
+ -->
+
+<div id="app">
+    <!-- 렌더링될 영역 -->
+</div>
+
+<script>
+    const data = {
+        message: 10 // 속성
+    }
+
+    function render(something) {
+        // DOM API: HTML 태그 정보를 접근할 수 있는 기능
+        // https://developer.mozilla.org/ko/docs/Web/API/Document_Object_Model/Introduction
+        const div = document.querySelector('#app'); // id가 app인 태그를 가져온다
+        div.innerHTML = something;
+    }
+
+    // Proxy: 객체의 기본 동작을 재정의
+    // https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Proxy
+    const app = new Proxy(data, {
+        get() {
+            console.log('값 접근');
+        },
+        // set()의 매개변수
+        // target: 대상 객체, property: 설정할 속성의 이름, value: 설정할 속성의 새 값
+        // https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Proxy/Proxy/set
+        set(target, prop, value) {
+            console.log('값 갱신');
+            target[prop] = value; // 객체의 속성 값에 새로운 값을 넣어준다
+            render(value);
+        }
+    })
+</script>

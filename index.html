@@ -1,0 +1,29 @@
+<!-- 
+    Vue3 공식 문서: https://vuejs.org/guide/introduction.html
+ -->
+ 
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<div id="app">
+    {{ message }}
+</div>
+
+<script>
+    // Vue2 (1)
+    // new Vue({
+    //     el: '#app'
+    // })
+
+    // Vue2 (2)
+    // new Vue({
+    // }).$mount('#app')
+
+    // Vue3
+    Vue.createApp({
+        data() {
+            return {
+                message: 'Hello, World!'
+            }
+        }
+    }).mount('#app');
+</script>
