@@ -17,5 +17,5 @@
 - [x] Section 4: Vue.js 템플릿 문법
 - [x] Section 5: Vue CLI: 뷰 프로젝트 생성 도구
 - [x] Section 6: Vue 싱글 파일 컴포넌트
-- [ ] Section 7: Vue.js 최종 프로젝트
-- [ ] Section 8: 수업 마무리
+- [x] Section 7: Vue.js 최종 프로젝트
+- [x] Section 8: 수업 마무리
