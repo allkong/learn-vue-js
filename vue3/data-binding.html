@@ -1,0 +1,35 @@
+
+<div id="app">
+    <!--
+        1. v-if
+        html에 '로그인 되었습니다'와 '로그인 하세요' 중에 나타난다
+     -->
+    <p v-if="login">로그인 되었습니다</p>
+    <p v-else>로그인 하세요</p>
+    <button v-on:click="loginUser">로그인</button>
+
+    <hr>
+
+    <!--
+        2. v-show
+        T/F와 관계 없이 p 태그는 html 상에 있지만 T/F에 따라 style="display: none"을 빼거나 넣는다
+     -->
+    <p v-show="login">로그인 되었습니다</p>
+    <button v-on:click="loginUser">로그인</button>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+Vue.createApp({
+    data() {
+        return {
+            login: false
+        }
+    },
+    methods: {
+        loginUser() {
+            this.login = !this.login;
+        }
+    }
+}).mount('#app')
+</script>

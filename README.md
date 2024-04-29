@@ -14,7 +14,7 @@
 - [x] Section 1: Vue.js 핵심 동작 원리
 - [x] Section 2: Vue.js 기본 개념과 문법
 - [x] Section 3: Vue.js 컴포넌트
-- [ ] Section 4: Vue.js 템플릿 문법
+- [x] Section 4: Vue.js 템플릿 문법
 - [ ] Section 5: Vue CLI: 뷰 프로젝트 생성 도구
 - [ ] Section 6: Vue 싱글 파일 컴포넌트
 - [ ] Section 7: Vue.js 최종 프로젝트
