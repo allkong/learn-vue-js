@@ -1,0 +1,38 @@
+<!-- 
+    컴포넌트 통신: 컴포넌트 간에 어떤 식으로 메시지를 주고 받을지 정의하는 것
+    props: 상위 컴포넌트 -> 하위 컴포넌트 (데이터)
+    event emit: 하위 컴포넌트 -> 상위 컴포넌트 (이벤트)
+    https://joshua1988.github.io/vue-camp/vue/components-communication.html
+
+    props 속성: 컴포넌트 간에 데이터를 전달할 수 있는 컴포넌트 통신 방법
+    https://joshua1988.github.io/vue-camp/vue/props.html
+ -->
+
+ <div id="app">
+    <!--
+        컴포넌트 표시
+        v-bind: 하나 이상의 속성 또는 컴포넌트 prop을 표현식에 동적으로 바인딩한다
+        <app-header v-bind:프롭스이름="상위 컴포넌트의 데이터 이름"></app-header>
+    -->
+    <app-header v-bind:title="appTitle"></app-header>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+    // 루트 컴포넌트 - createApp
+    Vue.createApp({
+        data() {
+            return {
+                appTitle: 'props 넘기기'
+            }
+        },
+        // 인스턴스 옵션 속성 - 옵션 API
+        components: {
+            // '컴포넌트 이름': 컴포넌트 내용
+            'app-header': {
+                template: '<h1>{{ title }}</h1>',
+                props: ['title']
+            }
+        }
+    }).mount('#app');
+</script>
